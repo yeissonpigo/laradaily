@@ -128,5 +128,6 @@
                 </div>
             </div>
         </div>
+        <a href="{{url('/users/create')}}">test</a>
     </body>
 </html>
