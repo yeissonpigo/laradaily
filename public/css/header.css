@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo&display=swap");
+
+/*
+
+Negro: #090910
+Blanco: #ffffff
+Naranja: #ff2d20
+Gris: #f8f8fc
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    --black-color: #090910;
+    --white-color: #ffffff;
+    --orange-color: #ff2d20;
+    --gray-color: #f8f8fc;
+    --navbar-color: var(--gray-color);
+    --options-color: var(--orange-color);
+    font-size: 35px;
+    font-family: "Heebo", sans-serif;
+    overflow-x: hidden;
+}
+
+.nav {
+    display: block;
+    position: fixed;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.nav__mobile.navbar__down {
+    background-color: var(--navbar-color);
+    transition: 0.5s;
+}
+
+.nav p.p__moved {
+    position:absolute;
+    margin-left: 10px;
+    top: 8px;
+    font-size: 1.1rem;
+    transition: 0.5s;
+}
+
+.nav p.normal {
+    transition: 0.5s;
+}
+
+.nav .nav__mobile .nav__logo img.img__hidden {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.nav .nav__mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--orange-color);
+    height: 70px;
+    transition: 0.5s;
+}
+
+.nav .nav__mobile .nav__logo {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+}
+
+.nav .nav__mobile .nav__logo img {
+    width: 50px;
+}
+
+.nav .nav__mobile .burger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.nav .nav__mobile .burger .line {
+    background-color: var(--black-color);
+    width: 30px;
+    height: 4px;
+    margin: 2.5px 10px 2.5px 0;
+    background-color: var(--orange-color);
+}
+
+.nav p {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    transition: 0.5s;
+}
+
+.nav .slide {
+    background-color: var(--white-color);
+    transform: translateX(150%);
+    transition: 0.5s;
+}
+
+.nav .slide.show.navbar__down {
+    background-color: var(--navbar-color); 
+    transform: translateX(0%);
+    transition: 0.5s;
+}
+
+.nav .slide.show {
+    transform: translateX(0%);
+    transition: 0.5s;
+}
+
+.nav__ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav ul {
+    margin: 20px 0px 20px 0px;
+    list-style: none;
+    text-align: center;
+}
+
+.nav ul li a {
+    display: block;
+    width: 100vh;
+    text-decoration: none;
+    color: var(--options-color);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.nav ul li a:hover {
+    background-color: var(--orange-color);
+    color: var(--white-color);
+    transition: 0.3s;
+}
+
+.prueba1 {
+    display: block;
+    margin-top: 60px;
+}
+
+.prueba2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
