@@ -26,7 +26,7 @@ Gris: #f8f8fc
 .nav {
     display: block;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     max-width: 1200px;
 }
 
@@ -54,6 +54,7 @@ Gris: #f8f8fc
 
 .nav .nav__mobile {
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
     color: var(--orange-color);
@@ -92,19 +93,20 @@ Gris: #f8f8fc
     transition: 0.5s;
 }
 
-.nav .slide {
+#slide.nav {
+    margin-top: 70px;
     background-color: var(--white-color);
     transform: translateX(150%);
     transition: 0.5s;
 }
 
-.nav .slide.show.navbar__down {
+#slide.nav.show.navbar__down {
     background-color: var(--navbar-color); 
     transform: translateX(0%);
     transition: 0.5s;
 }
 
-.nav .slide.show {
+#slide.nav.show {
     transform: translateX(0%);
     transition: 0.5s;
 }
@@ -145,4 +147,9 @@ Gris: #f8f8fc
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.content {
+    z-index: 2000;
+    margin-top: 80px;   
 }
