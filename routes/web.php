@@ -15,15 +15,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('main');
+});
+
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
 Route::post('/auth/login', [AuthController::class, 'login']);
+Route::post('/auth/logout', [AuthController::class, 'logout']);
 
 Route::resource('/users', 'App\Http\Controllers\UserController');
 Route::resource('/auth', 'App\Http\Controllers\AuthController');
 
-Route::get('/test', function () {
-    return view('main');
-}
+Route::get(
+    '/test',
+    function () {
+        return view('flash-message');
+    }
 );

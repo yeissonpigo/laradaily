@@ -24,9 +24,18 @@ class AuthController extends Controller
         $credential = $request->only('email', 'password');
 
         if(Auth::attempt($credential)) {
-            return redirect('/');
+            return redirect('/')->withSuccess('Ha iniciado sesión correctamente.');
         }
-        return redirect("login")->withSuccess('Login details are not valid');
+        return redirect("/auth")->withError('Credenciales inválidas.');
+    }
+
+    public function logout(Request $request) {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect("/");
     }
 
     public function register()

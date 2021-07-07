@@ -63,6 +63,7 @@ input[type="submit"] {
     margin-bottom: 10px;
     background-color: var(--orange-color);
     color: var(--white-color);
+    cursor: pointer;
 }
 
 input[type="submit"]:hover {

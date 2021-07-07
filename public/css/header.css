@@ -15,7 +15,7 @@ Gris: #F5F5FA
     --black-color: #090910;
     --white-color: #ffffff;
     --orange-color: #ff2d20;
-    --gray-color: #F5F5FA;
+    --gray-color: #f5f5fa;
     --navbar-color: var(--gray-color);
     --options-color: var(--orange-color);
     font-size: 35px;
@@ -28,13 +28,16 @@ Gris: #F5F5FA
     display: block;
     position: fixed;
     width: 100vw;
-    max-width: 1200px;
     z-index: 3;
 }
 
 .nav__mobile.navbar__down {
     background-color: var(--navbar-color);
     transition: 0.5s;
+}
+
+.nav p {
+    cursor: default;
 }
 
 .nav p.p__moved {
@@ -51,6 +54,10 @@ Gris: #F5F5FA
     transition: 0.5s;
 }
 
+.nav .nav__mobile .div__options, .nav .nav__mobile .div__user {
+    display: none;
+}
+
 .nav .nav__mobile {
     display: flex;
     width: 100%;
@@ -61,6 +68,7 @@ Gris: #F5F5FA
     transition: 0.5s;
     border-bottom: 3px solid var(--white-color);
     z-index: 3;
+    overflow-y: hidden;
 }
 
 .nav .nav__mobile .nav__logo {
@@ -102,7 +110,7 @@ Gris: #F5F5FA
 }
 
 #slide.nav.show.navbar__down {
-    background-color: var(--navbar-color); 
+    background-color: var(--navbar-color);
     transform: translateX(0%);
     transition: 0.5s;
 }
@@ -122,6 +130,13 @@ Gris: #F5F5FA
     margin: 20px 0px 20px 0px;
     list-style: none;
     text-align: center;
+}
+
+.nav ul li {
+    color: var(--options-color);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    cursor: default;
 }
 
 .nav ul li a {
@@ -152,5 +167,47 @@ Gris: #F5F5FA
 
 .content {
     z-index: 2;
-    margin-top: 80px;   
+    margin-top: 80px;
+}
+
+
+@media screen and (min-width: 1200px) {
+
+    body {
+        margin: 0;
+    }
+
+    .nav {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+
+    .nav .nav__mobile .div__options, .nav .nav__mobile .div__user {
+        display: flex;
+    }
+
+    .nav .nav__mobile .burger {
+        display: none;
+    }
+
+    .nav .nav__mobile .div__options ul, .nav .nav__mobile .div__user ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .nav .nav__mobile .div__options ul li, .nav .nav__mobile .div__user ul li {
+        margin-right: 20px;
+    }
+
+    .nav .nav__mobile .div__options ul li a, .nav .nav__mobile .div__user ul li a {
+        padding: 8px 10px;
+        font-size: 0.5rem;
+        width: auto;
+    }
+
+    #slide.nav {
+        display: none;
+    }
 }
