@@ -23,12 +23,12 @@ Gris: #F5F5FA
     overflow-x: hidden;
 }
 
-
 .nav {
     display: block;
     position: fixed;
     width: 100vw;
     z-index: 3;
+    overflow-y: visible ;
 }
 
 .nav__mobile.navbar__down {
@@ -54,26 +54,35 @@ Gris: #F5F5FA
     transition: 0.5s;
 }
 
-.nav .nav__mobile .div__options, .nav .nav__mobile .div__user {
+.nav .nav__mobile .div__options,
+.nav .nav__mobile .div__user {
     display: none;
 }
 
 .nav .nav__mobile {
     display: flex;
     width: 100%;
-    align-items: center;
+    align-items:center;
     justify-content: space-between;
     color: var(--orange-color);
-    height: 70px;
+    height: auto;
     transition: 0.5s;
     border-bottom: 3px solid var(--white-color);
     z-index: 3;
-    overflow-y: hidden;
+    overflow-y: visible;
+}
+
+.nav .left__side {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
 }
 
 .nav .nav__mobile .nav__logo {
     display: flex;
     flex-direction: row;
+    align-items: center;
     padding-left: 10px;
 }
 
@@ -103,7 +112,7 @@ Gris: #F5F5FA
 }
 
 #slide.nav {
-    margin-top: 70px;
+    margin-top: 50px;
     background-color: var(--white-color);
     transform: translateX(150%);
     transition: 0.5s;
@@ -139,7 +148,26 @@ Gris: #F5F5FA
     cursor: default;
 }
 
-.nav ul li a {
+.nav ul li button.dropbtn {
+    border: none;
+    background-color: transparent;
+}
+
+.nav ul li.dropdown:hover .drop-content {
+    display: block;
+}
+
+.drop-content {
+    display: none;
+}
+
+.nav ul li.dropdown .drop-content a {
+    margin-bottom: 10px;
+    font-size: 0.4rem;
+}
+
+.nav ul li a,
+.dropbtn {
     display: block;
     width: 100vh;
     text-decoration: none;
@@ -148,7 +176,8 @@ Gris: #F5F5FA
     font-size: 0.8rem;
 }
 
-.nav ul li a:hover {
+.nav ul li a:hover,
+.nav ul li button.dropbtn:hover {
     background-color: var(--orange-color);
     color: var(--white-color);
     transition: 0.3s;
@@ -170,21 +199,20 @@ Gris: #F5F5FA
     margin-top: 80px;
 }
 
-
 @media screen and (min-width: 1200px) {
-
     body {
         margin: 0;
     }
 
     .nav {
         display: flex;
+        align-items: baseline;
         width: 100%;
         justify-content: space-between;
     }
 
-
-    .nav .nav__mobile .div__options, .nav .nav__mobile .div__user {
+    .nav .nav__mobile .div__options,
+    .nav .nav__mobile .div__user {
         display: flex;
     }
 
@@ -192,16 +220,20 @@ Gris: #F5F5FA
         display: none;
     }
 
-    .nav .nav__mobile .div__options ul, .nav .nav__mobile .div__user ul {
+    .nav .nav__mobile .div__options ul,
+    .nav .nav__mobile .div__user ul {
         display: flex;
         justify-content: space-around;
     }
 
-    .nav .nav__mobile .div__options ul li, .nav .nav__mobile .div__user ul li {
+    .nav .nav__mobile .div__options ul li,
+    .nav .nav__mobile .div__user ul li {
         margin-right: 20px;
     }
 
-    .nav .nav__mobile .div__options ul li a, .nav .nav__mobile .div__user ul li a {
+    .nav .nav__mobile .div__options ul li a,
+    .nav .nav__mobile .div__user ul li a,
+    .dropbtn {
         padding: 8px 10px;
         font-size: 0.5rem;
         width: auto;

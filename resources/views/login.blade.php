@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-    Registrar
+    Ingresar
 @endsection
 
 @section('content')

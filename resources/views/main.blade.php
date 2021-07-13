@@ -29,11 +29,16 @@
             <div class="div__user">
                 <ul class="nav__user">
                     @guest
+                        <li class="element1"><a href="{{ url('posts/create') }}">Prueba</a></li>
                         <li class="element1"><a href="{{ url('auth') }}">Ingresar</a></li>
                         <li class="element2"><a href="{{ url('users/create') }}">Registrar</a></li>
                     @endguest
                     @auth
-                        <li class="element1">{{ Auth::user()->name }}</li>
+                        <li class="dropdown">
+                            <button class="dropbtn">
+                                {{ Auth::user()->name }}
+                            </button>
+                        </li>
                         <li class="element2"><a href="{{ url('auth/logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('form_logout').submit();">Logout</a>
                         </li>
@@ -65,7 +70,15 @@
                         <li class="element2"><a href="{{ url('users/create') }}">Registrar</a></li>
                     @endguest
                     @auth
-                        <li class="element1">{{ Auth::user()->name }}</li>
+                        <li class="element1 dropdown">
+                            <button class="dropbtn">
+                                {{ Auth::user()->name }}
+                            </button>
+                            <div class="drop-content">
+                                <a href="{{ url('posts/create') }}">Crear post</a>
+                                <a href="#">Ver mis posts</a>
+                            </div>
+                        </li>
                         <li class="element2"><a href="{{ url('auth/logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('form_logout').submit();">Logout</a>
                         </li>
@@ -117,6 +130,7 @@
     </div>
 
     <script src="{{ asset('/js/navbar.js') }}"></script>
+    @yield('script')
 </body>
 
 </html>
