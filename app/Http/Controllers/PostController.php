@@ -68,7 +68,6 @@ class PostController extends Controller
 
         $myPost->save();
 
-        //dd($request->file("input_image1")->store("", "google"));
         return ("Publicado " . $myContent);
     }
 
