@@ -49,7 +49,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        ini_set('max_execution_time', '300');
+        ini_set('max_execution_time', '600');
         $this->validate($request, array(
             'title' => 'required|max:64',
             'content' => 'required',
@@ -57,27 +57,21 @@ class PostController extends Controller
 
         $myContent =  $request->all();
 
-        //dd($myContent['content']);
         foreach ($myContent['content'] as $key => $myKey) {
             foreach ($myKey['img'] as $img => $myImg) {
                 $myContent['content'][$key]['img'][$img] = Storage::disk('s3')->put("images", $myImg); 
             }
         }
 
-        dd($myContent['content']);
-
-        //Storage::disk('google')->putFileAs("", $test['content']['part1']['img'][1], 'test');
-
-        //dd($test['content']['part2']['img'][1]);
-
-        /*$myPost = new Post;
+        $myPost = new Post;
         $myPost->title = $request->title;
-        $myPost->content = $myContent;
+        $myPost->content = json_encode($myContent);
         $myPost->owner_id = Auth::User()->id;
         $myPost->date = "2012-03-06";
 
-        $myPost->save();*/
+        $myPost->save();
 
+        return redirect('posts')->with('success', 'Su publicación se ha guardado correctamente.');
         //dd($request->content->file('content.part1.img.1')/*file('content.part1.img.1')*/);
     }
 
