@@ -17,11 +17,11 @@
                 <input type="text" placeholder="Titulo" name="title" id="title" maxlength="64" required>
             </div>
             <div>
-                <input type="text" placeholder="Su contenido" name="txt[]" id="content" required>
+                <input type="text" placeholder="Su contenido" name="content[part1][txt]" id="content" required>
             </div>
-            <div class="image" id="input_image">
-                <input name="img[]" type="file" id="fileName" accept=".jpg,.jpeg,.png,.gif"
-                    onchange="loadFile(event)">
+            <div class="image" id="input_image11">
+                <input type="file" id="fileName11" accept=".jpg,.jpeg,.png,.gif"
+                    onchange="loadFile(event)" name="content[part1][img][1]">
             </div>
             <div class="div__adding" id="referenceNodeAdd">
                 <div>

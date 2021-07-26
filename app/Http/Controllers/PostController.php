@@ -49,26 +49,36 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        ini_set('max_execution_time', '300');
         $this->validate($request, array(
             'title' => 'required|max:64',
             'content' => 'required',
         ));
 
-        Storage::disk('google')->putFileAs("", $request->file('input_image1'), $request->title.'img1');
+        $myContent =  $request->all();
 
-        $myContent = array('txt1' => $request->content, 'img1' => $request->title.'img1');
-        $myContent = json_encode($myContent);
+        //dd($myContent['content']);
+        foreach ($myContent['content'] as $key => $myKey) {
+            foreach ($myKey['img'] as $img => $myImg) {
+                $myContent['content'][$key]['img'][$img] = Storage::disk('s3')->put("images", $myImg); 
+            }
+        }
 
+        dd($myContent['content']);
 
-        $myPost = new Post;
+        //Storage::disk('google')->putFileAs("", $test['content']['part1']['img'][1], 'test');
+
+        //dd($test['content']['part2']['img'][1]);
+
+        /*$myPost = new Post;
         $myPost->title = $request->title;
         $myPost->content = $myContent;
         $myPost->owner_id = Auth::User()->id;
         $myPost->date = "2012-03-06";
 
-        $myPost->save();
+        $myPost->save();*/
 
-        return ("Publicado " . $myContent);
+        //dd($request->content->file('content.part1.img.1')/*file('content.part1.img.1')*/);
     }
 
 

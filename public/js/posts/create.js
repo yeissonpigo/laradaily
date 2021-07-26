@@ -1,4 +1,5 @@
-var counter = 1;
+var counter_text = 1;
+var counter_img = 1;
 
 /**
  * Loads the image in a new img tag inside a new div, and removes the button to add image.
@@ -6,15 +7,15 @@ var counter = 1;
  * @param {*} event
  */
 function loadFile(event) {
-    var input = document.getElementById("fileName");
+    var input = document.getElementById("fileName" + counter_text + counter_img);
     var reader = new FileReader();
     reader.readAsDataURL(input.files[0]);
     reader.onload = function () {
         createDiv(1);
-        var output = document.getElementById("output"+counter);
-        var addButton = document.getElementById("input_image");
+        var output = document.getElementById("output" + counter_text + counter_img);
+        var addButton = document.getElementById('input_image'+counter_text+counter_img);
         output.src = reader.result;
-        addButton.remove();
+        addButton.style.display = "none";
     };
 }
 
@@ -22,6 +23,7 @@ function loadFile(event) {
  * Creates div
  */
 function createDiv(myCase) {
+    
     var newNode = document.createElement("div");
     var referenceNode = document.getElementById("referenceNodeAdd");
 
@@ -30,17 +32,19 @@ function createDiv(myCase) {
 
         referenceNode.before(newNode);
     } else if (myCase == 2) {
-        newNode.id = "input_image";
+        counter_img++;
+        newNode.id = 'input_image'+counter_text+counter_img;
         newNode.classList.toggle("image");
 
         newNode.innerHTML =
-            '<input type="file" name="img[]" accept=".jpg,.jpeg,.png,.gif" id="fileName" onchange="loadFile(event)"/>';
+            '<input type="file" name="content[part'+counter_text+'][img]['+counter_img+']" accept=".jpg,.jpeg,.png,.gif" id="fileName' + counter_text + counter_img +'" onchange="loadFile(event)"/>';
 
         referenceNode.before(newNode);
-        counter++;
     } else {
+        counter_text++;
+        counter_img = 0;
         newNode.innerHTML =
-            '<input type="text" placeholder="Su contenido" name="txt[]" id="content" required>';
+            '<input type="text" placeholder="Su contenido" name="content[part'+counter_text+'][txt]" id="content" required>';
         referenceNode.before(newNode);
     }
 }
@@ -53,7 +57,7 @@ function createImg() {
 
     var referenceNode = document.getElementById("referenceNodeAdd");
 
-    newNode.id = "output" + counter;
+    newNode.id = "output" + counter_text + counter_img;
 
     newNode.style.width = "100%";
 
