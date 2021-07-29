@@ -1,0 +1,31 @@
+.show__posts {
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.show__posts a {
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+.show__posts h1:hover{
+    background-color: var(--orange-color);
+    color: var(--white-color);
+    font-weight: lighter;
+    transition: 0.3s;
+}
+
+.show__posts:hover span {
+    color: var(--black-color);
+    transition: 0.3s;
+}
+
+.posts__title {
+    font-size: 0.7rem;
+}
+
+.posts__title span {
+    font-size: 0.7rem;
+    color: var(--orange-color);
+}

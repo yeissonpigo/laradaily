@@ -1,6 +1,7 @@
 @extends('main')
 
 @section('css')
+    <link rel="stylesheet" href="{{ asset('/css/posts/show.css') }}">
 @endsection
 
 @section('title')
@@ -9,8 +10,10 @@
 
 @section('content')
     @forelse ($posts as $post)
-        <div>
-            <h1>{{ $post->title }}</h1>
+        <div class="show__posts">
+            <a href="#">
+                <h1 class="posts__title"><span>#</span> {{ $post->title }}</h1>
+            </a>
         </div>
     @empty
         <p>No se han realizado publicaciones</p>
