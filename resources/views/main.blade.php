@@ -30,7 +30,6 @@
             <div class="div__user">
                 <ul class="nav__user">
                     @guest
-                        <li class="element1"><a href="{{ url('posts/create') }}">Prueba</a></li>
                         <li class="element1"><a href="{{ url('auth') }}">Ingresar</a></li>
                         <li class="element2"><a href="{{ url('users/create') }}">Registrar</a></li>
                     @endguest
