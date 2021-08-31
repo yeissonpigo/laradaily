@@ -22,8 +22,8 @@
             <div class="div__options">
                 <ul class="nav__options">
                     <li class="element1"><a href="/">Inicio</a></li>
-                    <li class="element2"><a href="">Colaborar</a></li>
-                    <li class="element3"><a href="">Contratar</a></li>
+                    <li class="element2"><a href="/collaborate">Colaborar</a></li>
+                    <li class="element3"><a href="https://yeissonbackend.com">Contratar</a></li>
                     <li class="element4"><a href="">Equipo</a></li>
                 </ul>
             </div>
@@ -57,9 +57,9 @@
         <div class="slide">
             <div class="nav__ul">
                 <ul class="nav__options">
-                    <li class="element1"><a href="">Inicio</a></li>
-                    <li class="element2"><a href="">Colaborar</a></li>
-                    <li class="element3"><a href="">Contratar</a></li>
+                    <li class="element1"><a href="/">Inicio</a></li>
+                    <li class="element2"><a href="/collaborate">Colaborar</a></li>
+                    <li class="element3"><a href="https://yeissonbackend.com" target=”_blank”>Contratar</a></li>
                     <li class="element4"><a href="">Equipo</a></li>
                 </ul>
             </div>
