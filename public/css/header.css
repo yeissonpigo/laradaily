@@ -29,6 +29,7 @@ Gris: #F5F5FA
     width: 100vw;
     z-index: 3;
     overflow-y: visible ;
+    background: var(--white-color);
 }
 
 .nav__mobile.navbar__down {

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('/css/header.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/footer.css') }}">
     @yield('css')
+    <script src="https://kit.fontawesome.com/bace6cc7e8.js" crossorigin="anonymous"></script>
     <title> @yield('title') </title>
 </head>
 
@@ -20,7 +21,7 @@
             </div>
             <div class="div__options">
                 <ul class="nav__options">
-                    <li class="element1"><a href="">Inicio</a></li>
+                    <li class="element1"><a href="/">Inicio</a></li>
                     <li class="element2"><a href="">Colaborar</a></li>
                     <li class="element3"><a href="">Contratar</a></li>
                     <li class="element4"><a href="">Equipo</a></li>

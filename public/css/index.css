@@ -1,0 +1,70 @@
+.mother {
+    width: 100%;
+    background-color: var(--orange-color);
+}
+
+.title {
+    width: 80%;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+h1,
+h2 {
+    color: var(--gray-color);
+}
+
+h2 {
+    font-size: 0.8rem;
+    color: var(--white-color);
+}
+
+h3 {
+    color: var(--orange-color);
+}
+
+.content__this {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.content__this p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 0.7rem;
+    text-align: justify;
+}
+
+i {
+    font-size: 150px;
+    margin-top: 20px;
+    color: var(--orange-color);
+}
+
+.content__this strong{
+    font-size: 0.7rem;
+}
+
+.big {
+    width: 100%;
+}
+
+.vs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 10000px;
+}
+
+.particle {
+    display: block;
+    width: 100px;
+}
+
+.particle {
+    width: 10%;
+}
