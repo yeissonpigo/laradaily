@@ -29,7 +29,7 @@ class InfoMail extends Mailable
      */
     public function build()
     {
-        return $this->from('info@yeissonbackend.com')
+        return $this->from('yeissonpigo@unisabana.edu.co')
             ->view('index')
             ->with(
                 [
