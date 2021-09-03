@@ -23,7 +23,7 @@
                 <ul class="nav__options">
                     <li class="element1"><a href="/">Inicio</a></li>
                     <li class="element2"><a href="/collaborate">Colaborar</a></li>
-                    <li class="element3"><a href="https://yeissonbackend.com">Contratar</a></li>
+                    <li class="element3"><a href="https://yeissonbackend.com" target=”_blank”>Contratar</a></li>
                     <li class="element4"><a href="">Equipo</a></li>
                 </ul>
             </div>
@@ -109,7 +109,7 @@
         <div class="footer__contact">
             Contacto
             <ul>
-                <li><a href="https://www.yeissonbackend.com">Administrador</a></li>
+                <li><a href="https://www.yeissonbackend.com" target=”_blank”>Administrador</a></li>
             </ul>
         </div>
         <div class="footer__description">
