@@ -34,4 +34,4 @@ Route::get('/test', [App\Http\Controllers\PostController::class, 'create']);
 Route::get('/collaborate', function () { 
     return view('collaborate');
 })->name('collaborate');
-Route::get('mail/send', [App\Http\Controllers\MailController::class, 'send']);
+Route::post('mail/send', [App\Http\Controllers\MailController::class, 'send']);

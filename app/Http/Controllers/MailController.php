@@ -8,15 +8,15 @@ use App\Mail\InfoMail;
 
 class MailController extends Controller
 {
-    public function send()
+    public function send(Request $request)
     {
         $objDemo = new \stdClass();
-        $objDemo->demo_one = 'Demo One Value';
-        $objDemo->demo_two = 'Demo Two Value';
-        $objDemo->sender = 'SenderUserName';
-        $objDemo->receiver = 'ReceiverUserName';
+        $objDemo->email = $request->email;
+        $objDemo->question1 = $request->question1;
+        $objDemo->question2 = $request->question2;
+        $objDemo->question3 = $request->question3;
  
-        Mail::to("yeison02101@hotmail.com")->send(new InfoMail($objDemo));
+        Mail::to([$request->email, 'yeison02101@hotmail.com'])->send(new InfoMail($objDemo));
         return "mensaje enviado";
     }
 }

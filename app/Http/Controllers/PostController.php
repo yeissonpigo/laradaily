@@ -72,7 +72,6 @@ class PostController extends Controller
         $myPost->save();
 
         return redirect('posts')->with('success', 'Su publicación se ha guardado correctamente.');
-        //dd($request->content->file('content.part1.img.1')/*file('content.part1.img.1')*/);
     }
 
 

@@ -11,15 +11,17 @@ class InfoMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $data;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($demo)
+    public function __construct($data)
     {
         //
-        $this->demo = $demo;
+        $this->data = $data;
     }
 
     /**
@@ -30,13 +32,7 @@ class InfoMail extends Mailable
     public function build()
     {
         return $this->from('yeissonpigo@unisabana.edu.co')
-            ->view('index')
-            ->with(
-                [
-                    'testVarOne' => '1',
-                    'testVarTwo' => '2',
-                ]
-            )
+            ->view('mailable/collaborate_plain')
             /*->attach(public_path('/images') . '/demo.jpg', [
                 'as' => 'demo.jpg',
                 'mime' => 'image/jpeg',
